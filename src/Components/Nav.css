@@ -1,0 +1,9 @@
+a{
+    padding: 15px;
+    text-decoration: none;
+    font-size: x-large;
+    color: rgb(93, 85, 85)
+}
+nav{
+    z-index:10 ;
+}

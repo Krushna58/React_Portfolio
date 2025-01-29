@@ -1,0 +1,105 @@
+img{
+   position: relative;
+   left: 600px;
+}
+
+#btn{
+   border-bottom-right-radius: 20px;
+   margin-bottom: 20px;
+}
+p{
+   font-size: 20px;
+}
+
+
+
+.child{
+   position: absolute;
+   animation-name: moving_up;
+   animation-duration: 7s;
+   animation-iteration-count: infinite;
+   /* background-color: pink; */
+   opacity: 0.6;
+
+}
+#child1{
+   height: 90px;
+   width: 100px;
+   border-radius: 20%;
+   left: 100px;
+   animation-delay: 3s;
+
+   background-image: url(../assests/JavaScript-logo.png);
+   background-size: cover;
+}
+#child2{
+   height: 100px;
+   width: 110px;
+   border-radius: 30%;
+   animation-duration: 3s;
+   left: 300px;
+   background-image: url(../assests/html.jpg);
+   background-size: cover;
+
+}
+#child3{
+   height: 110px;
+   width: 100px;
+   border-radius: 20%;
+   animation-duration: 5s;
+   left: 500px;
+   background-image: url(../assests/react.png);
+   background-size: cover;
+   background-position: center;
+
+}
+#child4{
+   height: 80px;
+   width: 110px;
+   border-radius: 30%;
+   animation-duration: 6s;
+   left: 700px;
+   background-image: url(../assests/html.jpg);
+   background-size: cover;
+
+}
+#child5{
+   height: 90px;
+   width: 100px;
+   border-radius: 20%;
+   animation-duration: 4s;
+   left: 900px;
+   background-image: url(../assests/CSS-Logo.png);
+   background-size: cover;
+
+}
+
+@keyframes moving_up{
+   0%{
+      bottom: 0%;
+
+   }
+   100%{
+      bottom: 100%;
+   
+   }
+}
+/* @keyframes moving_down{
+   0%{
+      top: 100%;
+   }
+   100%{
+      bottom: 0%;
+   }
+} */
+
+
+
+.josefin-sans{
+  font-family: "Josefin Sans", serif;
+  font-optical-sizing: 12px;
+  font-weight: 10px;
+  font-style: normal;
+}
+
+
