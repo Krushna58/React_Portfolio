@@ -1,69 +1,65 @@
-import React from 'react'
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import './Education.css'
+import './Education.css';
 import Project from './Project';
+import { motion } from 'framer-motion';
 
 function Education() {
-
-    let education=[
+    let education = [
         {
-            titel:"BE in computer Science",
-            clg:"Sandip Institute Of Engineering And Management, Nashik",
-            Year:"May 2024",
-            Percentage:"Percentage/CGPA 7.77"
+            title: "BE in Computer Science",
+            clg: "Sandip Institute Of Engineering And Management, Nashik",
+            Year: "May 2024",
+            Percentage: "Percentage/CGPA: 7.77"
         },
         {
-            titel:"Higher Secondary Certificate(HSC)",
-            clg:"Late Shri Nathaji Patil Mhaske College of Education Rahata Ahmednagar",
-            Year:"jul 2020"
-            
+            title: "Higher Secondary Certificate (HSC)",
+            clg: "Late Shri Nathaji Patil Mhaske College of Education Rahata Ahmednagar",
+            Year: "Jul 2020"
         },
         {
-            titel:"Secondary School Certificate (SSC)",
-            clg:" Dnyanganga Vidyaniketan Junior College, Manchi Hill, Sangamner",
-            Year:"june 2018"
-            
+            title: "Secondary School Certificate (SSC)",
+            clg: "Dnyanganga Vidyaniketan Junior College, Manchi Hill, Sangamner",
+            Year: "June 2018"
         }
-        
-    ]
-  return (
-    <div>
-        <div>
-            <div className='row'>
-                <div className='col'> 
+    ];
 
-                    <h1 className='josefin-sans' style={{textAlign:"left"} }>My Education</h1>
-                    <p className='josefin-sans'>Summry Of My Academic Background</p>
+    return (
+        <div className='education-container'>
+            <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+            >
+                <h1 className='josefin-sans education-title'>My Education</h1>
+                <p className='josefin-sans education-summary'>Summary of My Academic Background</p>
+            </motion.div>
 
-
-               {
-                education.map((item)=>{
-                        return(
-                            <Card style={{ width: '18rem',display:"inline-block",margin:"70px" }} className='card1'>
-      
+            <div className='education-cards'>
+                {education.map((item, index) => (
+                    <motion.div 
+                        key={index}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <Card className='education-card'>
                             <Card.Body>
-                              <Card.Title>{item.titel}</Card.Title>
-                              <Card.Text>
-                                <p>{item.clg}</p>
-                                <p>{item.Year}</p>
-                                <p>{item.Percentage}</p>
-                              </Card.Text>
-                              <Button variant="primary">Go somewhere</Button>
+                                <Card.Title>{item.title}</Card.Title>
+                                <Card.Text>
+                                    <p>{item.clg}</p>
+                                    <p>{item.Year}</p>
+                                    {item.Percentage && <p>{item.Percentage}</p>}
+                                </Card.Text>
+                                <Button variant="primary">More Info</Button>
                             </Card.Body>
-                          </Card>
-                        )
-                })
-               }
-     
-
-                </div>
+                        </Card>
+                    </motion.div>
+                ))}
             </div>
+            <Project />
         </div>
-        <Project/>
-      
-    </div>
-  )
+    );
 }
 
-export default Education
+export default Education;

@@ -6,11 +6,14 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import Project from './Project'
 import Contact from './Contact'
 import Footer from './Footer'
+import { Container } from '@mui/material'
+import Navbar from 'react-bootstrap/Navbar';
+import { motion } from 'framer-motion';
 
 function Nav() {
 
   return (
-    <div>
+  <div>
         <nav>
             <div>
             <NavLink to={'/'}>Home</NavLink>
